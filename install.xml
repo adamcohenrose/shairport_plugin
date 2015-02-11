@@ -4,7 +4,7 @@
 	<name>PLUGIN_SHAIRTUNES</name>
 	<module>Plugins::ShairTunes::Plugin</module>
 	<playerMenu>RADIO</playerMenu>
-	<version>0.23.6</version>
+	<version>0.23.7</version>
 	<description>PLUGIN_SHAIRTUNES_DESC</description>
 	<creator>DSTMK</creator>
 	<defaultState>enabled</defaultState>
@@ -14,7 +14,7 @@
 	<type>2</type><!-- type=extension -->
 	<targetApplication>
 		<id>Squeezecenter</id>
-		<minVersion>7.3</minVersion>
+		<minVersion>7.5</minVersion>
 		<maxVersion>7.*</maxVersion>
 	</targetApplication>
 	<targetPlatform>Linux</targetPlatform>

@@ -216,7 +216,7 @@ sub conn_read_data {
      my $buffer;
      
 #     my $bytesToRead = 4096;
-     $bytesToRead = ${*$socket}{BYTESTOREAD}; 
+     my $bytesToRead = ${*$socket}{BYTESTOREAD}; 
      
      ### This while loop is a workaround until this thing is implemented correctly into lms
 #     while(42) {
@@ -246,7 +246,7 @@ sub conn_read_data {
                     ### Content missing -> Back to LMS.
                     $log->debug("Content not yet completely received. Waiting...");
                     ### In the next loop just read whats missing.
-                    my $bytesToRead = $contentLength - length($contentBody);
+                    $bytesToRead = $contentLength - length($contentBody);
                }
                else {
                     $log->debug("Got the content.");

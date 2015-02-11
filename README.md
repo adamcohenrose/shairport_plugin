@@ -1,13 +1,16 @@
-shairport_plugin
-================
+shairport_plugin for Mac OS X
+=============================
 
 ShairPort Plugin for Squeezebox Server adds airTunes support for each Squeezebox server client.
 
-To install the plugin first install the dependancies:
+To install the plugin first [install Homebrew](http://brew.sh/#install), then install the dependencies as follows:
 
-    > apt-get install libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libio-socket-ssl-perl
-    > wget http://www.inf.udec.cl/~diegocaro/rpi/libnet-sdp-perl_0.07-1_all.deb
-    > dpkg -i libnet-sdp-perl_0.07-1_all.deb
+	export ARCHFLAGS="-arch x86_64"
+	brew install pkg-config libao
+	# while perl is already installed with OS X, 
+	# this updates to the latest version and makes sure dependencies are in order
+	curl -L http://xrl.us/installperlosx | bash
+	sudo perl -MCPAN -e 'install Crypt::OpenSSL::RSA; install IO::Socket::INET6; install Net::SDP'
 
 Now open the LMS GUI; click on Settings, then select the Plugins tab, at the bottom of the page add the repo:
 
@@ -15,46 +18,6 @@ http://raw.github.com/adamcohenrose/shairport_plugin/master/public.xml
 
 Next install the plugin and enable as per usual.
 
-Once installed the helper app needs to be compiled and/or installed into the systems PATH. There
-are a number of pre-compiled binaries in the directory:
-
-/var/lib/squeezeboxserver/cache/InstalledPlugins/Plugins/ShairTunes/shairport_helper/pre-compiled
-
-Copy the one for your system into the PATH, on a linux system you may copy it to:
-
-/usr/local/bin/shairport_helper   - note the file needs to be renamed.
- 
-To compile the helper app, on Linux:
-
-    > apt-get install build-essential libssl-dev libcrypt-openssl-rsa-perl \
-            libao-dev libio-socket-inet6-perl libwww-perl avahi-utils pkg-config
-    > cd /var/lib/squeezeboxserver/cache/InstalledPlugins/Plugins/ShairTunes/shairport_helper/
-    > make
-    > cp shairport_helper /usr/local/bin
-  
-Lastly, ensure avahi-daemon is configured correctly. edit the file /etc/avahi/avahi-daemon.conf:
-
-    [server]
-    use-ipv4=yes
-    use-ipv6=no  #if you have ios7 devices change to yes
-    
-    [wide-area]
-    enable-wide-area=yes
-    
-    [publish]
-    publish-aaaa-on-ipv4=no
-    publish-a-on-ipv6=no
-    
-    [reflector]
-    
-    [rlimits]
-    rlimit-core=0
-    rlimit-data=4194304
-    rlimit-fsize=0
-    rlimit-nofile=300
-    rlimit-stack=4194304
-    rlimit-nproc=3
-  
-Then restart avahi-daemon and LMS to apply all settings.
-
 See http://forums.slimdevices.com/showthread.php?100379-Announce-ShairTunes-Plugin
+
+Thanks to [John Slack](http://jslack.blogspot.co.uk/2014/08/airplay.html) for further exploration on OS X
