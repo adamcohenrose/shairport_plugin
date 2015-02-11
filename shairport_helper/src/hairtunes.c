@@ -38,6 +38,7 @@
 #include <math.h>
 #include <errno.h>
 #include <sys/stat.h>
+#include <sys/time.h>
 
 #include "hairtunes.h"
 #include <sys/signal.h>

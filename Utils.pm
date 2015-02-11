@@ -20,6 +20,9 @@ sub helperBinary {
      elsif ( $Config{'archname'} =~ /linux/ ) {
           $shairtunes_helper = $directory. "helperBinaries/shairport_helper-x64-linux";
      }
+     elsif ( $Config{'archname'} =~ /darwin/ ) {
+          $shairtunes_helper = $directory. "helperBinaries/shairport_helper-x64-osx";
+     }
      else {
           die("No shairport_helper binary for your system available.");
      }
