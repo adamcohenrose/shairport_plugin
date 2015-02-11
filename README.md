@@ -11,7 +11,7 @@ To install the plugin first install the dependancies:
 
 Now open the LMS GUI; click on Settings, then select the Plugins tab, at the bottom of the page add the repo:
 
-http://raw.github.com/StuartUSA/shairport_plugin/master/public.xml
+http://raw.github.com/adamcohenrose/shairport_plugin/master/public.xml
 
 Next install the plugin and enable as per usual.
 
@@ -22,7 +22,7 @@ are a number of pre-compiled binaries in the directory:
 
 Copy the one for your system into the PATH, on a linux system you may copy it to:
 
-/usr/loca/bin/shairport_helper   - note the file needs to be renamed.
+/usr/local/bin/shairport_helper   - note the file needs to be renamed.
  
 To compile the helper app, on Linux:
 

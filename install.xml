@@ -19,4 +19,5 @@
 	</targetApplication>
 	<targetPlatform>Linux</targetPlatform>
 	<targetPlatform>Unix</targetPlatform>
+	<targetPlatform>Darwin</targetPlatform>
 </extension>
